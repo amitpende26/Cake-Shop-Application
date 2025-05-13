@@ -1,0 +1,17 @@
+{%extends "homepage.html"%}
+{%block content%}
+ <form method="post">
+    {%if message%}
+    <div class="alert alert-success alert-dismissible">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>{{message}}</strong> 
+      </div>
+      {%endif%}
+    <table class="table">
+        <tr><td>Login ID</td><td><input type="text" name="uname" required/></td></tr>
+        <tr><td>Password</td><td><input type="text" name="pwd" required/></td></tr>
+        <tr><td><button class="button btn-danger form-control" type="submit" value="Login">Login</button><td></td></td></tr>
+
+    </table>
+ </form>
+{%endblock%}

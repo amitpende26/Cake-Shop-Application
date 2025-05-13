@@ -1,0 +1,35 @@
+{%extends "homepage.html"%}
+{%block content%}
+ <form method="post">
+    <table class="table">
+        <tr><td>Cake Name</td><td>{{cake[1]}}
+            <input type="hidden" name="cake_id" value="{{cake[0]}}"/>
+        </td></tr>
+        <tr><td>Price</td><td>{{cake[2]}}</td></tr>
+        <tr><td>Description</td><td>{{cake[3]}}</td></tr>
+        <tr><td>Image</td><td>
+            
+            <img src="{{url_for('static', filename=cake[4])}}"
+            class="img-responsive"
+            style="width:300px;height: 300px;" alt="Image">
+        
+        
+        </td></tr>
+        <tr><td>Category</td><td>{{cake[5]}}</td></tr>
+        <tr>
+            <td>Quantity</td><td>
+                <select name="qty" class="form-control"style='width: 80px;'>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </td>
+        </tr>
+<tr><td><button class="button btn-danger form-control"type="submit">Add to Cart</button></td><td></td></tr>
+    
+
+    </table>
+</form>
+{%endblock%}

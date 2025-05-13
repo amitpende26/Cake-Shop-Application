@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: cornsilk;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>Show All Categories</h1>
+        <a href="/addCategory">Add New Category</a>
+    <hr/>
+    <form>
+    <table border="1">
+        <tr><th>Category ID</th><th>Category Name</th><th>Edit</th><th>Delete</th></tr>
+        {%for Cat in cats%}
+        
+
+        <!-- comment is done using ctrl button + / -->
+
+        <tr><th>{{Cat[0]}}</th><th>{{Cat[1]}}</th>
+        <th><a href="/editCategory/{{Cat[0]}}">Edit</a></th> 
+        <th><a href="/deleteCategory/{{Cat[0]}}">Delete</a></th></tr>
+            {%endfor%}
+    </table>
+    </form>
+    </center>
+    
+</body>
+</html>

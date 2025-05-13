@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: cornsilk;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>Show All Cakes</h1>
+        <a href="/addCake">Add New Category</a>
+    <hr/>
+    <form>
+    <table border="1" >
+        <tr><th>Cake ID</th><th>Cake Name</th><th>Price</th><th>Description</th><th>Image</th>
+        <th>Category</th><th>Edit</th><th>Delete</th></tr>
+        {%for cake in cakes%}
+        <!--  for getting Image on website we use following -->
+        <tr>
+            <td>{{cake[0]}}</td>
+            <td>{{cake[1]}}</td>
+            <td>{{cake[2]}}</td>
+            <td>{{cake[3]}}</td>
+            <td><img src="{{ url_for('static', filename=cake[4])}}" height="100" width="100"></td>
+            <td>{{cake[5]}}</td>
+        </tr>
+
+        <!-- {%endfor%} -->
+
+        <!-- {%for cake in cakes%}
+        <tr>{% for c in cake%}
+            <td>{{c}}</td>
+            {%endfor%}
+       -->
+
+        <!-- comment is done using ctrl button + / -->
+
+        <!-- <tr><th>{{cake[0]}}</th><th>{{cake[1]}}</th> -->
+        <td><a href="">Edit</a></td> 
+        <td><a href="">Delete</a></td></tr>
+           
+        {%endfor%}
+    </table>
+    </form>
+    </center>
+    
+</body>
+</html>
